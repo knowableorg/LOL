@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
   <header>
     <title>LOL Shield Web App</title>
     <link href="/styles/style.css" media="all" rel="stylesheet" />
@@ -16,147 +16,39 @@
         <p>This web app sends your drawings right to the knowable office. Just activate the dots below by clicking on them. Go crazy and send us beautiful things. Or <a href="http://knowable.org">read the documentation here</a>.</p>
       </div>
 
-      <div class="lolshield-case">
-        <ol class="lolshield-LEDs">
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>     
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>     
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>
-          <li class="LED"></li>  
-          <div class="clearfix"></div>
-        </ol>
+      <form action="/submit" method="POST">
+        <div class="lolshield-case">
+            <ol class="lolshield-LEDs">
+              <% 9.times do |row| %>
+                <% 14.times do |col| %>
+                  <li class="LED">
+                    <input type="checkbox" style="display: none;" name="led[<%= row %>][<%= col %>]" />
+                  </li>
+                <% end %>
+              <% end %>
 
-        <script type="text/javascript">
-          $( ".LED" ).click(function() {
-            $( this ).toggleClass( "active" );
-          });
-        </script>
-      </div>
-      
-      <div class="send-image">
-        <a href="/" class="btn">Click to send your LOL image to the knowable office!</a>
-      </div>
+              <div class="clearfix"></div>
+            </ol>
+
+          <script type="text/javascript">
+            $( ".LED" ).click(function(e) {
+              e.preventDefault();
+
+              if ($(this).hasClass('active')) {
+                $( this ).removeClass( "active" );
+                $( this ).find( 'input[type=checkbox]' ).attr('checked', false);
+              } else {
+                $( this ).addClass( "active" );
+                $( this ).find( 'input[type=checkbox]' ).attr('checked', true);
+              }
+            });
+          </script>
+        </div>
+
+        <div class="send-image">
+          <input type="submit" class="btn" value="Click to send your LOL image to the knowable office!" />
+        </div>
+      </form>
 
       <p class="madeby">Made by <a href="https://twitter.com/andrewradev">@andrewradev</a> and <a href="https://twitter.com/kryobot">@kryobot</a></p>
 

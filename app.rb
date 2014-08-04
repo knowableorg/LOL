@@ -14,19 +14,26 @@ class KnowableLOL < Sinatra::Base
     erb :index
   end
 
-  get '/left' do
-    map = File.read('data/left')
-    write_map(map)
-    "<pre>#{map}</pre>"
-  end
+  post '/submit' do
+    map_array = blank_map_array
 
-  get '/right' do
-    map = File.read('data/right')
+    params['led'].each do |col, rows|
+      rows.each do |row, _|
+        map_array[col.to_i][row.to_i] = '#'
+      end
+    end
+
+    map = map_array.map { |row| row.join('') }.join("\n")
     write_map(map)
-    "<pre>#{map}</pre>"
+
+    redirect to('/')
   end
 
   private
+
+  def blank_map_array
+    Array.new(15) { Array.new(9) { '.' } }
+  end
 
   def write_map(map)
     map.split("\n").each_with_index do |row, row_index|
