@@ -81,7 +81,8 @@ a {
     height: 52.5px;
     margin: 0 3px 3px 0;
     border: 3px solid #e3493c;
-    border-radius: 50%; }
+    border-radius: 50%;
+    cursor: pointer; }
   .lolshield-case li:nth-child(14n) {
     margin: 0 0 3px 0; }
   .lolshield-case li.active {
