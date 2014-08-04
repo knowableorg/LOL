@@ -47,6 +47,7 @@ table {
   box-sizing: border-box; }
 
 body {
+  height: calc(100% - 3px);
   background: #fff;
   font-family: 'PT Mono', monospace;
   line-height: 1.5em; }
@@ -57,7 +58,9 @@ a {
 .wrap {
   width: 800px;
   margin: auto;
-  margin-top: 120px; }
+  margin-top: 120px;
+  padding: 0 0 357px 0;
+  background: url(/images/usb.png) no-repeat 700px bottom; }
 
 .clearfix {
   clear: both; }
@@ -87,3 +90,11 @@ a {
     margin: 0 0 3px 0; }
   .lolshield-case li.active {
     background: #e3493c; }
+
+a.btn, .btn {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background: #e3493c;
+  padding: 10px;
+  border-radius: 2px; }
