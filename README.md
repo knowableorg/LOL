@@ -1,6 +1,8 @@
 # LOL
 
-knowable's own LOL-shield web app!
+![THE LOL-O-TRON](/public/images/lol-o-tron.png?raw=true)
+
+knowable's own LOL-shield web app: The LOL-O-TRON 3000. Try it today!
 
 ## Setup
 
