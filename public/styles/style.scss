@@ -56,10 +56,6 @@ table {
     box-sizing: border-box;
 }
 
-html {
-
-}
-
 body {
     height: calc(100% - 3px);
     background: #fff;
@@ -68,15 +64,22 @@ body {
 
 }
 
-a {
+h1 {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+}
+
+a, a:visited {
     color: #e3493c;
 }
 
 .wrap {
+    overflow: hidden;
     width: 800px;
     margin: auto;
     margin-top: 80px;
-    padding: 0 0 357px 0;
+    margin-bottom: -3px;
+    padding: 0 0 293px 0;
     background: url(/images/usb.png) no-repeat 700px bottom;
 }
 
@@ -128,6 +131,17 @@ a.btn, .btn{
     background: #e3493c;
     border: 3px solid #ae382e;
     border-radius: 2px;
+    &:hover {
+        background: #ae382e;
+    }
+}
+
+.send-image {
+    margin: 0 0 40px 0;
+}
+
+.madeby {
+
 }
 
 
