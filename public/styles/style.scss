@@ -50,11 +50,16 @@ table {
 // Alright, let's write some CSS!
 
 // Basics
-
+*{
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
 body {
     background: #fff;
     font-family: 'PT Mono', monospace;
     line-height: 1.5em;
+
 }
 
 a {
@@ -66,3 +71,53 @@ a {
     margin: auto;
     margin-top: 120px;
 }
+
+.clearfix {
+    clear: both;
+}
+
+// Intro 
+
+.intro {
+    margin: 0 0 40px 0;
+}
+
+// Shield
+
+.lolshield-case {
+    height: 520px;
+    width: 800px;
+    margin: 0 0 40px 0;
+    border: 3px solid #e3493c;
+    border-radius: 2px;
+    .lolshield-LEDs {
+        width: 775px;
+        margin: auto;
+        margin-top: 10px;
+    }
+    li {
+        float: left;
+        width: 52.5px;
+        height: 52.5px;
+        margin: 0 3px 3px 0;
+        border: 3px solid #e3493c;
+        border-radius: 50%;
+    }
+    li:nth-child(14n){
+        margin: 0 0 3px 0;
+    }
+    li.active {
+        background: #e3493c;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+

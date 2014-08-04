@@ -41,6 +41,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 body {
   background: #fff;
   font-family: 'PT Mono', monospace;
@@ -53,3 +58,31 @@ a {
   width: 800px;
   margin: auto;
   margin-top: 120px; }
+
+.clearfix {
+  clear: both; }
+
+.intro {
+  margin: 0 0 40px 0; }
+
+.lolshield-case {
+  height: 520px;
+  width: 800px;
+  margin: 0 0 40px 0;
+  border: 3px solid #e3493c;
+  border-radius: 2px; }
+  .lolshield-case .lolshield-LEDs {
+    width: 775px;
+    margin: auto;
+    margin-top: 10px; }
+  .lolshield-case li {
+    float: left;
+    width: 52.5px;
+    height: 52.5px;
+    margin: 0 3px 3px 0;
+    border: 3px solid #e3493c;
+    border-radius: 50%; }
+  .lolshield-case li:nth-child(14n) {
+    margin: 0 0 3px 0; }
+  .lolshield-case li.active {
+    background: #e3493c; }
