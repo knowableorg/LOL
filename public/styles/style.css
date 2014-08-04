@@ -65,7 +65,7 @@ a, a:visited {
   margin: auto;
   margin-top: 80px;
   margin-bottom: -3px;
-  padding: 0 0 293px 0;
+  padding: 0 0 249px 0;
   background: url(/images/usb.png) no-repeat 700px bottom; }
 
 .clearfix {
@@ -102,6 +102,8 @@ a.btn, .btn {
   color: #fff;
   text-align: center;
   text-decoration: none;
+  font-family: 'PT Mono', monospace;
+  font-size: 16px;
   background: #e3493c;
   border: 3px solid #ae382e;
   border-radius: 2px; }
